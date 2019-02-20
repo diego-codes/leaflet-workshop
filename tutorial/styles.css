@@ -1,0 +1,22 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+}
+
+.map {
+  height: 100%;
+  background-color: gray;
+}
+
+.controls {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: white;
+  z-index: 1000;
+  padding: 0.5rem;
+}

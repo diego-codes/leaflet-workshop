@@ -1,0 +1,24 @@
+{
+  "name": "chicago-data-viz-leaflet-workshop",
+  "version": "0.0.1",
+  "description": "Intro to Leaflet.js workshop for Chicago Data Viz meetup",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diego-codes/leaflet-workshop.git"
+  },
+  "keywords": [],
+  "author": "Diego Hernandez <diego.a.hernandez123@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/diego-codes/leaflet-workshop/issues"
+  },
+  "homepage": "https://github.com/diego-codes/leaflet-workshop#readme",
+  "dependencies": {
+    "citysdk": "^2.0.7",
+    "esm": "^3.2.5",
+    "node-fetch": "^2.3.0"
+  }
+}
