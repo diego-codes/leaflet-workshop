@@ -3,13 +3,15 @@ import fs from 'fs';
 import path from 'path';
 import _census from 'citysdk';
 
-const variables = {
-    "total": "B08301_001E",
-    "car": "B08301_002E",
-    "transit": "B08301_010E",
-    "walk": "B08301_019E",
-    "worked at home": "B08301_021E",
-}
+const values = [
+  'B08301_001E',
+  'B08301_010E',
+  'B08301_003E',
+  'B08301_018E',
+  'B08301_019E',
+  'B08301_016E',
+  'B08301_017E',
+];
 
 const handleErrors = err => {
   console.error(err);
@@ -38,18 +40,16 @@ async function main() {
   const res = await census({
     vintage: 2017,
     geoHierarchy: {
-      // state: '*',
-      // 'urban-area': '*'
-      // 'region': '*',
+      // 'combined-statistical-area': '*',
       'metropolitan-statistical-area!micropolitan-statistical-area': '*',
-      // 'place': '*',
     },
     sourcePath: ['acs', 'acs1'],
-    values: [...Object.values(variables), 'B01003_001E'],
+    values,
+    
     statsKey: CENSUS_API_KEY,
     geoResolution: '500k',
   });
-
+  console.log(`${res.features.length} records created`);
   writeFile(path.resolve(__dirname, '../tutorial/data.geo.json'), JSON.stringify(res, null, 2));
 }
 
