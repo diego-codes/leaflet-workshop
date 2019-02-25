@@ -9,22 +9,24 @@
   <!-- VENDOR STYLES -->
   <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,600" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/GPavlovic/rrose@0.2.3/dist/leaflet.rrose.css" integrity="sha256-fTmgcAUjPyAerOoI/7pQKteE04ZWjA+06paTtY9486U=" crossorigin="anonymous">
 
   <!-- OUR STYLES -->
   <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
-  <main id="map" class="my-map"></main>
+  <!-- Element where map will be rendered -->
+  <main id="my-map" class="map"></main>
+
   <aside class="panel">
     <h1 class="panel__title">
       <label class="control__label" for="transportation-mode">Transportation mode:</label>
     </h1>
-    <!-- this select element is our dropdown -->
+
+    <!-- Transportation mode dropdown selector -->
     <select class="control__input" id="transportation-mode">
       <option value="public_transportation">Took public transportation</option>
-      <option value="drove_alone">Drove car, van, or truck alone</option>
+      <option value="drove_alone">Drove a car, van, or truck alone</option>
       <option value="bicycle">Biked</option>
       <option value="walked">Walked</option>
       <option value="taxicab">Took a taxicab</option>
@@ -34,7 +36,6 @@
 
   <!-- VENDOR SCRIPTS -->
   <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
-  <script src="https://cdn.jsdelivr.net/gh/GPavlovic/rrose@0.2.3/dist/leaflet.rrose-src.js" integrity="sha256-GnwJ/gEmfYpUOcwAADtfJwAhA3cXsyc/eafbPJRUeBI=" crossorigin="anonymous"></script>
 
   <!-- OUR SCRIPT -->
   <script src="./script.js"></script>
