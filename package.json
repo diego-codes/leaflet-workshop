@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Intro to Leaflet.js workshop for Chicago Data Viz meetup",
   "scripts": {
-    "build": "node build.js"
+    "build": "node -r esm fetch-data.js"
   },
   "repository": {
     "type": "git",

@@ -1,6 +1,5 @@
 import { CENSUS_API_KEY } from '../common/secrets'
 import fs from 'fs'
-import path from 'path'
 import _census from 'citysdk'
 
 const variables = {
@@ -118,7 +117,7 @@ const main = async () => {
     console.log(data.features[0].properties)
     console.log(`${data.features.length} records created`)
 
-    writeFile(path.resolve(__dirname, '../tutorial/data.geo.json'), JSON.stringify(data, null, 2))
+    writeFile('./data.geo.json', JSON.stringify(data, null, 2))
   } catch (error) {
     console.error(error)
     process.exit(1)
