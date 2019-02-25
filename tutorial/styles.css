@@ -21,15 +21,15 @@ h6 {
 
 .map {
   height: 100%;
-  background-color: gray;
+  background-color: #1b1b1d;
 }
 
 .panel {
   position: absolute;
   top: 0;
   right: 0;
-  background-color: #030303;
-  color: #f0f0f0;
+  background-color: #1b1b1d;
+  color: #e9e7e7;
   z-index: 1000;
   padding: 0.6em 0.9em;
   opacity: 0.8;
@@ -42,55 +42,30 @@ h6 {
   opacity: 1;
 }
 
-.panel__section {
-  padding-bottom: 1em;
-  margin-bottom: 1.5em;
-  border-bottom: 1px solid #666;
-}
-
-.panel__section:last-of-type {
-  border-bottom: none;
-  margin-bottom: 0;
-}
-
 .panel__title {
   font-size: 1.45em;
   margin-bottom: 0.2em;
 }
 
-.rank {
-  list-style: none;
-  margin-top: 0;
-  margin-bottom: 1.5em;
+.control__label {
+  display: block;
 }
 
-.rank:last-of-type {
-  margin-bottom: 0;
+.control__input {
+  background-color: #e9e7e7;
+  border: none;
+  padding: 0.3em 1rem;
+  border-radius: 0;
+  font: inherit;
+  font-size: 0.8em;
 }
-
-.rank__item {
-  box-sizing: border-box;
-  display: flex;
-  width: 100%;
-  padding: 0 0.5em;
-  margin-bottom: 0.2em;
-}
-
-
-.rank__name {
-  flex: 1 1 auto;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
 
 /*
   Leaflet controls
 */
 .leaflet-bar a, .leaflet-bar a:hover {
-  background-color: black;
-  color: #e0e0e0;
+  background-color: #1b1b1d;
+  color: #e9e7e7;
   box-shadow: none;
   border: none;
   margin-bottom: 0.2em;
@@ -109,22 +84,30 @@ h6 {
 /* 
   Tooltip
 */
-.leaflet-rrose-content-wrapper, .leaflet-rrose-tip {
-  background-color: black;
-  color: #e0e0e0;
+.tooltip {
+  background-color: #1b1b1d;
+  color: #e9e7e7;
+  box-shadow: none;
+  font-family: 'Titillium Web', Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  width: 20rem;
+  white-space: normal;
+  padding: 0.5em;
 }
 
-.tooltip {
-  font-family: 'Titillium Web', Arial, Helvetica, sans-serif;
-  max-width: 15em;
-  font-size: 1rem;
+.leaflet-tooltip-left:before {
+  border-left-color: #1b1b1d;
+}
+
+.leaflet-tooltip-right:before {
+  border-right-color: #1b1b1d;
 }
 
 .tooltip__title {
   font-size: 1.2em;
+  margin-bottom: 0.3em;
 }
 
 .tooltip__percent {
   font-weight: 600;
-  color: white;
 }
