@@ -5,9 +5,9 @@ Leaflet is an open-source JavaScript library for mobile-friendly interactive map
 Unlike traditional GIS (Geographic Information Systems) tools like Esri's ArcGIS or the freeware QGIS, Leaflet uses the full power of the web to create dynamic maps based on any data. GIS tools tend to focus more on static mapmaking whereas Leaflet is a tool designed to be used for the web.
 
 ## When is Leaflet a good tool to use over D3.js?
-Any situation where you want to overlay geographic data over detailed maps like streets maps or topography, Leaflet is a good tool to use. Through the use of layers called "tiles", you can set many different maps as the base of your visualization, like streets, topography, {OTHER EXAMPLE}. And this doesn't just work for Earth, you can create maps that are based on a different body of mass like Mars, the Sun, etc.
+Any situation where you want to overlay geographic data over detailed maps like streets maps or topography, Leaflet is a good tool to use. Through the use of layers called "tiles", you can set many different maps as the base of your visualization, like streets, topography, or territory boundaries.
 
-The nice thing about Leaflet is that it provides standard interactive mapping controls like zooming, panning, and tile rendering based on zoom levels. And unlike Google Maps, you can use Javascript to write script that react to these types of interactions.
+The nice thing about Leaflet is that it provides standard interactive mapping controls like zooming, panning, and tile rendering based on zoom levels. And unlike Google Maps, you can use Javascript to write script that reacts to these types of interactions.
 
 
 ### Demonstration of benefits
@@ -15,10 +15,10 @@ The nice thing about Leaflet is that it provides standard interactive mapping co
 - **Zooming:** Provide higher fidelity visualizations when up close and provide greater context when zoomed out 
 - **Panning:** Load data as needed
 
-## What is GeoJSON?
-GeoJson is a format for encoding a variety of geographic data structures using... you guessed it JSON. With GeoJSON you can represent points, lines, polygons and other geometric shapes over maps. **GeoJSON uses Earth coordinate system to set the properties of these things.** This can be compared to shape or kml files used by Esri and Google respectively. GeoJSON uses JSON syntax, it works really well for web-based mapping tools like APIs, JSON-based document databases and, you guessed it again - Leaflet.
 
 ## Workshop
+
+We're going to be creating a map that will look like this: https://diego-codes.github.io/leaflet-workshop/ 
 
 ### Get started
 1. **Get the files:**
@@ -80,6 +80,8 @@ Now that we have a working map, let's add some data to it!
    For this workshop, we have the file `metros.json` with GeoJSON format data from the US Census. In a real-world use case you'd be fetching data from [their API's](https://www.census.gov/data/developers/data-sets/acs-5year.html), but for the sake of the workshop I've aleady gotten the data and cleaned it up for you.
 
    We're going to be looking at a small set of [US metro areas and their commuting](https://factfinder.census.gov/faces/tableservices/jsf/pages/productview.xhtml?pid=ACS_17_5YR_B08301&prodType=table) habits from the US Census Bureau's 2013-2017 American Community Survey 5-Year Estimates.
+
+   GeoJson is a format for encoding a variety of geographic data structures using... you guessed it JSON. With GeoJSON you can represent points, lines, polygons and other geometric shapes over maps. **GeoJSON uses Earth coordinate system to set the properties of these things.** This can be compared to shape or kml files used by Esri and Google respectively. GeoJSON uses JSON syntax, it works really well for web-based mapping tools like APIs, JSON-based document databases and, you guessed it again - Leaflet.
 
    ```js
    /* ...map with tiles */
@@ -347,3 +349,11 @@ Without interactivity, our map is boring and missing a lot of key information. L
     })
    }
    ```
+
+## Resources
+- [Leaflet tutorials](https://leafletjs.com/examples.html)
+- [Leaflet documentation](https://leafletjs.com/reference-1.4.0.html)
+- [GeoJSON specification](http://geojson.org/)
+- US Census [American FactFinder](https://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml) to explore data the census collects
+- US Census [developers portal](https://www.census.gov/developers/)
+- [CitySDK](https://github.com/uscensusbureau/citysdk) Javascript package for working with US Census APIs
