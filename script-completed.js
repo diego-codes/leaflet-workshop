@@ -1,5 +1,5 @@
 // Create map variable
-const map = L.map('map').setView([37.0902, -95.7129], 5)
+const map = L.map('my-map').setView([37.0902, -95.7129], 5)
 
 // Add tiles to map
 L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-background/{z}/{x}/{y}{r}.{ext}', {
