@@ -11,7 +11,7 @@ L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-background/{z}/{x}/
 
 
 // Get data from GeoJSON file
-fetch('./metros.json')
+fetch('https://raw.githubusercontent.com/diego-codes/leaflet-workshop/master/metros.json')
   .then((response) => {
     return response.json()
     })
@@ -92,7 +92,7 @@ const setMetroInteractions = (metro, layer) => {
     const selectedTransportationMode = transportationModeElem.value
 
     // Get the text inside of the transportation mode option that is selected
-    const selectedVariableLabel = transportationModeElem.querySelector(`option[value="${selectedTransportationMode}"]`).textContent
+    const transportationModeLabel = transportationModeElem.querySelector(`option[value="${selectedTransportationMode}"]`).textContent
 
 
     // Get percentage value for each metro area given the selected
@@ -108,7 +108,7 @@ const setMetroInteractions = (metro, layer) => {
     myTooltip.setContent(`
       <h1 class="tooltip__title">${metro.properties.name}</h1>
       <p class="tooltip__paragraph">
-        In the ${metro.properties.name} metro area, an estimated <span class="tooltip__percent">${roundedPercent}%</span> of workers ${selectedVariableLabel.toLowerCase()} to work.
+        In the ${metro.properties.name} metro area, an estimated <span class="tooltip__percent">${roundedPercent}%</span> of workers ${transportationModeLabel.toLowerCase()} to work.
       </p>
     `)
   })

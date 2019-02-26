@@ -1,24 +1,40 @@
 # Chicago DataViz Leaflet workshop
+
+## Table of content
+- [Overview](#overview)
+  - [What is Leaflet?](#what-is-Leaflet)
+  - [How is Leaflet different from other GIS tools?](#how-is-leaflet-different-from-other-gis-tools)
+  - [When is Leaflet a good tool to use over D3.js?](#when-is-leaflet-a-good-tool-to-use-over-d3js)
+- [Workshop](#workshop)
+  - [Get started](#get-started)
+  - [Create map](#create-map)
+  - [Visualize data on map](#visualize-data-on-map)
+  - [Make map interactive](#make-map-interactive)
+- [Resources ](#resources)
+
+
+## Overview
+### What is Leaflet?
 Leaflet is an open-source JavaScript library for mobile-friendly interactive maps. Similar to Google Maps, it provides a presentational layer to geographic data.
 
-## How is Leaflet different from other GIS tools?
+### How is Leaflet different from other GIS tools?
 Unlike traditional GIS (Geographic Information Systems) tools like Esri's ArcGIS or the freeware QGIS, Leaflet uses the full power of the web to create dynamic maps based on any data. GIS tools tend to focus more on static mapmaking whereas Leaflet is a tool designed to be used for the web.
 
-## When is Leaflet a good tool to use over D3.js?
+### When is Leaflet a good tool to use over D3.js?
 Any situation where you want to overlay geographic data over detailed maps like streets maps or topography, Leaflet is a good tool to use. Through the use of layers called "tiles", you can set many different maps as the base of your visualization, like streets, topography, or territory boundaries.
 
 The nice thing about Leaflet is that it provides standard interactive mapping controls like zooming, panning, and tile rendering based on zoom levels. And unlike Google Maps, you can use Javascript to write script that reacts to these types of interactions.
 
-
-### Demonstration of benefits
-- **Map layers:** Give users better context especially if they are not familiar with the shapes or geographies presented
-- **Zooming:** Provide higher fidelity visualizations when up close and provide greater context when zoomed out 
-- **Panning:** Load data as needed
+With that said, Leaflet and D3.js can work really well together.
 
 
 ## Workshop
 
 We're going to be creating a map that will look like this: https://diego-codes.github.io/leaflet-workshop/ 
+
+I highly recommend using Chrome or Firefox as we're using newer Javascript features that may not work on other browers.
+
+If you get stuck and need to see the final code, you can find it in [`./completedScript.js`](https://github.com/diego-codes/leaflet-workshop/blob/master/completedScript.js)
 
 ### Get started
 1. **Get the files:**
@@ -87,7 +103,7 @@ Now that we have a working map, let's add some data to it!
    /* ...map with tiles */
 
    // Get data from GeoJSON file
-   fetch('./metros.json')
+   fetch('https://raw.githubusercontent.com/diego-codes/leaflet-workshop/master/metros.json')
     .then((response) => {
       return response.json()
      })
@@ -107,7 +123,7 @@ Now that we have a working map, let's add some data to it!
    /* ...map with tiles */
 
    // Get data from GeoJSON file
-   fetch('./metros.json')
+   fetch('https://raw.githubusercontent.com/diego-codes/leaflet-workshop/master/metros.json')
     .then((response) => {
       return response.json()
      })
@@ -127,7 +143,7 @@ Now that we have a working map, let's add some data to it!
    /* ...map with tiles */
 
    // Get data from GeoJSON file
-   fetch('./metros.json')
+   fetch('https://raw.githubusercontent.com/diego-codes/leaflet-workshop/master/metros.json')
     .then((response) => {
       return response.json()
      })
@@ -222,7 +238,7 @@ Without interactivity, our map is boring and missing a lot of key information. L
    /* ...map with tiles */
 
    // Get data from GeoJSON file
-   fetch('./metros.json')
+   fetch('https://raw.githubusercontent.com/diego-codes/leaflet-workshop/master/metros.json')
     .then((response) => {
       return response.json()
      })
@@ -247,7 +263,7 @@ Without interactivity, our map is boring and missing a lot of key information. L
    /* ...map with tiles */
 
    // Get data from GeoJSON file
-   fetch('./metros.json')
+   fetch('https://raw.githubusercontent.com/diego-codes/leaflet-workshop/master/metros.json')
     .then((response) => {
       return response.json()
      })
@@ -291,7 +307,7 @@ Without interactivity, our map is boring and missing a lot of key information. L
        const selectedTransportationMode = transportationModeElem.value
 
        // Get the text inside of the transportation mode option that is selected
-       const selectedVariableLabel = transportationModeElem.querySelector(`option[value="${selectedTransportationMode}"]`).textContent
+       const transportationModeLabel = transportationModeElem.querySelector(`option[value="${selectedTransportationMode}"]`).textContent
 
 
        // Get percentage value for each metro area given the selected
@@ -307,7 +323,7 @@ Without interactivity, our map is boring and missing a lot of key information. L
        myTooltip.setContent(`
         <h1 class="tooltip__title">${metro.properties.name}</h1>
         <p class="tooltip__paragraph">
-          In the ${metro.properties.name} metro area, an estimated <span class="tooltip__percent">${roundedPercent}%</span> of workers ${selectedVariableLabel.toLowerCase()} to work.
+          In the ${metro.properties.name} metro area, an estimated <span class="tooltip__percent">${roundedPercent}%</span> of workers ${transportationModeLabel.toLowerCase()} to work.
         </p>
        `)
      })
